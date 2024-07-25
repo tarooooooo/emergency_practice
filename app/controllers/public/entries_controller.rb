@@ -14,7 +14,9 @@ class Public::EntriesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @image_url = "https://wan-nyan-contest-resize.s3-ap-northeast-1.amazonaws.com/#{@entry.image.key}-thumbnail.#{@entry.image.content_type.split('/').pop}"
+  end
 
   private
 
